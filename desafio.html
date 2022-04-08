@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      *,
+      *:before,
+      *:after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding: 60px;
+        color: rgb(180, 165, 165);
+        letter-spacing: 0.2cm;
+      }
+
+      .footer {
+        background-color: rgb(39, 43, 66);
+        height: 100px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 4cm;
+        margin-top: -1cm;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        color: rgb(180, 165, 165);
+      }
+
+      body {
+        background-color: rgb(48, 27, 63);
+        width: 100%;
+        height: 100%;
+      }
+
+      img {
+        width: 330px;
+        height: 330px;
+        border-radius: 100%;
+        margin-top: 4cm;
+      }
+
+      .menu {
+        background-color: rgb(21, 21, 21);
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        position: fixed;
+        bottom: 25px;
+        right: 25px;
+        cursor: pointer;
+        box-shadow: 0 0 0 0 rgb(21, 21, 21), 0 0 0 0 rgb(21, 21, 21);
+        transition: box-shadow 1s ease-in-out;
+      }
+
+      .menu:hover {
+        box-shadow: 0 0 0 8px rgb(21, 21, 21), 0 0 0 8px rgb(21, 21, 21);
+      }
+      .hamburguer {
+        position: relative;
+        display: block;
+        background: rgb(180, 165, 165);
+        width: 30px;
+        height: 2px;
+        top: 29px;
+        left: 15px;
+        transition: 0.5s ease-in-out;
+      }
+      .hamburguer:before,
+      .hamburguer:after {
+        background: rgb(180, 165, 165);
+        content: '';
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        transition: 0.3s ease-in-out;
+      }
+      .hamburguer:before {
+        top: -10px;
+      }
+      .hamburguer:after {
+        top: 10px;
+      }
+      input {
+        display: none;
+      }
+
+      input:checked ~ .descrição {
+      opacity: 1;
+      }
+
+      input:checked ~ .fatos {
+      opacity: 1;
+      }
+
+      input:checked ~ label .menu {
+        box-shadow: 0 0 0 130vw rgb(21, 21, 21), 0 0 0 130vh rgb(21, 21, 21);
+      }
+
+      input:checked ~ label .hamburguer {
+        transform: rotate(45deg);
+      }
+      input:checked ~ label .hamburguer:before {
+        transform: rotate(90deg);
+        top: 0;
+      }
+      input:checked ~ label .hamburguer:after {
+        transform: rotate(90deg);
+        top: 0;
+      }
+
+      .descrição {
+        text-align: justify;
+        width: 235px;
+        color: rgb(180, 165, 165);
+        position: absolute;
+        top: 128px;
+        left: 220px;
+        opacity: 0;
+        transition: 0.25s 0.5s cubic-bezier(0, 1.07, 0, 1.02);
+        z-index: 2;
+      }
+
+      .fatos {
+        color: rgb(180, 165, 165);
+        position: absolute;
+        top: 128px;
+        left: 700px;
+        text-align: justify;
+        width: 630px;
+        opacity: 0;
+        transition: 0.25s 0.5s cubic-bezier(0, 1.07, 0, 1.02);
+        z-index: 2;
+      }
+
+      a{
+        color: rgb(180, 165, 165);
+      }
+    </style>
+    <title>Site Pessoal</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>SOBRE MIM</h1>
+      <img src="3x4.png">
+    </div>
+    <div class="footer">
+      <h2>Contato</h2>
+      <br />
+      <h3>Email: izabellybezerra184@gmail.com</h3>
+      <h3>Telefone: (81)997429643</h3>
+      <h3>Instagram: <a href=https://www.instagram.com/izabellyssb>Izabellyssb</h3></a>
+      <h3>Linkedin: <a href=https://www.linkedin.com/in/izabelly-santana-929b13211/>Izabelly Santana</a></h3>
+
+    </div>
+    <input id="menu hamburger" type="checkbox" />
+    <label for="menu hamburger">
+      <div class="menu">
+        <span class="hamburguer"></span>
+      </div>
+    </label>
+    <div class="descrição">
+      <h2>BREVE DESCRIÇÃO</h2>
+      <p>
+        <br />
+        Oiee, gentee! Me chamo Izabelly Santana, tenho 19 anos e atualmente sonho
+        em ser desenvolvedora.
+        <br />Tô cursando Sistemas para Internet na UNICAP(Universidade Católica
+        de Pernambuco), sou técnica em Design pela ETE Cícero Dias e tô
+        esperando começar minha faculdade de Arq&Urb na UFPE. Meu "eu" de um ano
+        atrás ta chorando nesse momento aporque sonhava em ser arquiteta(aiai
+        conflitos internos), mas tudo bem porque eu prometi pra ela(a Iza de um
+        ano atrás) que ia cursar independente de qualquer coisa. Moro no
+        Ibura(pei pei), nasci no dia 28/08(minha data é linda, eu sei) e logo
+        aqui do lado tem 20 fatos sobre mim pra vocês me conhecerem ainda mais!
+        :)
+      </p>
+    </div>
+    <div class="fatos">
+      <ol>
+        <h2>20 FATOS SOBRE MIM</h2>
+        <br />
+        <li>Minha comida favorita é caldeirada</li>
+        <li>Sou apaixonada por sitcons</li>
+        <li>Minhas séries preferidas são brooklyn 99 e fleabag</li>
+        <li>
+          Tenho uma dog chamada Lilica Repilica Santana(tinha 6 anos e amava a
+          loja, me perdoem)
+        </li>
+        <li>Meu filme preferido é ilha do medo(AMO)</li>
+        <li>
+          Sou bem eclética quanto a musica mas o estilo que eu mais to ouvindo é
+          hip hop/rap
+        </li>
+        <li>Sou bem tímida quando não conheço</li>
+        <li>
+          Odeio SEMPRE ter que falar que meu nome é escrito com Z dois L e um Y
+        </li>
+        <li>To tentando virar marvete</li>
+        <li>Sou apaixonada por praia</li>
+        <li>
+          Ja fiz natação, ballet, aula de violão, teatro e dança do ventre(hoje
+          sou boa em nada! :)
+        </li>
+        <li>Sou muito ansiosa</li>
+        <li>
+          Consegui encher a memória do meu celular de 256gb com mais de 20.000
+          fotos kkkkkkkk
+        </li>
+        <li>Tenho um irmão de 13 anos</li>
+        <li>
+          Sou low profile mas cansei dessa fase e nao sei mais como deixar de
+          ser
+        </li>
+        <li>Sou viciada na maionese da heinz (boto em tudo)</li>
+        <li>Se nada der certo quero ser jogadora de vôlei!</li>
+        <li>Quero adotar uma criança quando for mais velha</li>
+        <li>Gosto muito de dançar</li>
+        <li>
+          Puxei meu gosto musical por Mpb do meu pai e ele fica bestinha quando
+          escuta isso(esse fato não é sobre mim mas acho fofo precisei falar)
+        </li>
+      </ol>
+    </div>
+  </body>
+</html>
